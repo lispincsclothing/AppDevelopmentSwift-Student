@@ -134,3 +134,23 @@ Lesson 1.4 Control Flow
     * switch
 * Related Resources 
     * [Swift Programming Language Guide: Control Flow](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/BasicOperators.html#//apple_ref/doc/uid/TP40014097-CH6-ID60) 
+
+Lesson 1.5 Xcode
+* File types
+    * .xcodeproj 
+        * file, which includes all the settings for your project and its targets.
+    * .swift 
+        * extension contain Swift code, as you'd expect. 
+    * .storyboard 
+        * files are unique to Interface Builder. They contain information about the design of each scene within your application, as well as how one screen transitions to another. 
+    * .xcassets 
+        * file makes it easy to maintain all your assets, without needing to work with individual icons and images. This asset catalog has two advantages: It reduces the list of items in the project navigator; and it shows which images will be used for devices of different screen sizes—helping you quickly identify that you're missing assets for a particular device.
+    * Info.plist 
+        * file contains a list of properties and settings for your app. In earlier versions of Xcode, you needed to edit this file directly, but newer versions allow you to edit settings—including app version, app icon, and device orientation—using the .xcodeproj file that you learned about earlier
+* Keyboard shortcuts
+    * Command-B—Build the project
+    * Command-R—Build and run the project
+    * Command-/—Toggle comments on selected rows of code
+    * Command-[—Shift the selected code left
+    * Command-]—Shift the selected code right
+    * [Xcode Keyboard Cheat Sheet](https://swifteducation.github.io/assets/pdfs/XcodeKeyboardShortcuts.pdf)
