@@ -154,3 +154,41 @@ Lesson 1.5 Xcode
     * Command-[—Shift the selected code left
     * Command-]—Shift the selected code right
     * [Xcode Keyboard Cheat Sheet](https://swifteducation.github.io/assets/pdfs/XcodeKeyboardShortcuts.pdf)
+
+Lesson 1.6 - Building, Running, Debugging an App
+* After Simulator has launched, you should see a device image with a white background. To rotate the image from portrait to landscape orientation, use the keyboard shortcuts Command-Left Arrow and Command-Right Arrow.
+* The Simulator image may appear quite large, depending on the screen resolution of your Mac and the device you chose to simulate. From inside the Simulator application, you can use keyboard shortcuts, from Command-1 to Command-5, to scale the device image up or down. If you're using an older Mac, you may want to select an older lower-resolution device, such as an iPhone SE, to reduce the total impact of Simulator on your system.
+* “To quit Simulator, use the keyboard shortcut Command-Q.”
+* “Simulator doesn't work for all portions of an app. Certain interactions depend on the actual physical device to run. For example, if you try to use Simulator to test an interaction with the Camera app, the program will crash. If your code depends on other hardware components that don't exist on a Mac—maybe an accelerometer, a gyroscope, or a proximity sensor—you'll want to test with an actual device”
+* “There are also some software limitations with Simulator. For example, push notifications can be delivered to physical devices, and the MessageUI framework—which helps compose email and text messages—is incompatible with Simulator. If you're running into a lot of issues in Simulator, you might try testing the code on your iPhone or iPad. Your issues may be resolved.
+* “issues: warnings, compiler errors, and bugs.”
+    1. Try to understand the problem
+    2. Brainstorm a potential solution
+    3. Try the solution
+    4. Verify it worked, repeat as necessary
+
+1.7 Documentation
+* Option-click the viewDidLoad() method name, and Xcode displays a popover with a brief description of the function and the OS versions that support it. It also shows which framework the function belongs to. In this case, the framework is UIKit.
+* Within the Quick Help popover, click Method Reference to access Xcode documentation, which includes more thorough explanations and references to related functions. (You can also access this window from the Xcode Help menu or by using the shortcut Command-Shift-0.)
+* You can also download all the guides and sample code to your computer—making them searchable from the documentation browser. Open Xcode Preferences (Command-Comma) and click Components. Select the Documentation section, near the top of the window, then click "Check and Install Now" to download the guides and sample code.
+* You can also download all the guides and sample code to your computer—making them searchable from the documentation browser. Open Xcode Preferences (Command-Comma) and click Components. Select the Documentation section, near the top of the window, then click "Check and Install Now" to download the guides and sample code.
+
+1.8 Interface Builder Basics
+
+* Interface Builder opens whenever you select an XIB file (.xib) or a storyboard file (.storyboard) from the project navigator.
+    * An XIB file contains the user interface for a single visual element, such as a full-screen view, a table view cell, or a custom UI control. XIBs were used more heavily before the introduction of storyboards. They're still a useful format in certain situations, but this lesson will focus on storyboards.
+    * In contrast with an XIB, a storyboard file includes many pieces of the interface, defining the layout of one or many screens as well as the progression from one screen to another. As a developer, you'll find that the ability to see multiple screens at once will help you understand the flow within your app.
+
+* Inspectors
+    * In addition to the File and Quick Help inspectors (which are always available), the top of the utilities area displays four context-sensitive inspectors when you're in Interface Builder. To explore these different inspectors and how they can help you customize the objects in your view, select the button you just added—either in the Document Outline or in the scene itself.
+    * The Identity inspector  allows you to edit the properties related to an object's identity, such as what class it belongs to. In this example, the button belongs to the UIButton class. If you'd defined a custom button class elsewhere, you could use the Identity inspector to change the class of the button you just added. You'll learn more about classes in a future section.
+    * The Attributes inspector  provides a list of adjustable visual properties for the selected item. In the case of a UIButton, you can change attributes such as the button's text, text color,background, and alignment. Try changing the look of your button.
+    * “The Size inspector  allows you to adjust the size and position of the selected element within the scene. You'll use the X and Y fields—where the top left of the screen corresponds to (0,0)—to change the position. The X value gets larger as you move the element farther to the right, and Y gets larger as you move down the screen. For UIButton, the Size inspector includes additional fields for adjusting the padding around the button's title or image.
+* Many objects that you can configure in Interface Builder have properties that can only be set programmatically. For example, UIScrollView has a contentSize property that does not have a matching option in the Attributes inspector.  When you need to adjust one of these settings, you can do so programmatically by setting up an IBOutlet and updating the properties using dot notation.
+    * `scrollView.contentSize = CGSize(width: 100, height: 100)`
+* In fact, everything that you can do in Interface Builder can also be done programmatically, including setting up all child views and adding them to the screen.
+```
+let label = UILabel(frame: CGRect(x: 16, y: 16, width: 200,
+height: 44))
+view.addSubview(label) // Adds label as a child view to `view 
+```
